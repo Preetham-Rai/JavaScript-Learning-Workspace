@@ -15,3 +15,4 @@ const users = {
 };
 
 //const can be used where the actual value not to be changed
+//Variables only access through lexical environment
