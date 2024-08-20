@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .body {
+        background-color: #2f2f2f;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <div class="parent">
+      <div class="days">Monday</div>
+      <div class="days">Tuesday</div>
+      <div class="days">Wednesday</div>
+      <div class="days">Thursday</div>
+    </div>
+  </body>
+  <script>
+    const parent = document.querySelector(".parent");
+    // console.log(parent);
+    // console.log(parent.children); .children property is used to check the children inside the parent
+    //to access the children element its basically like array so we can access it that way using index []
+    const child = document.querySelector(".days");
+    console.log(child.parentElement.innerText);
+  </script>
+</html>
