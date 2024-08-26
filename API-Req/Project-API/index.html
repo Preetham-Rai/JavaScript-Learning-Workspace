@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <p class="name"></p>
+    </div>
+    <script>
+      let url = "https://randomuser.me/api/";
+      const httpReq = new XMLHttpRequest();
+      httpReq.open("GET", url);
+      httpReq.onreadystatechange = function () {
+        if (httpReq.readyState === 4) {
+          let data = JSON.parse(this.responseText);
+          //   console.log(data.results[0].picture.large);
+          let randomUserImg = data.results[0].picture.large;
+          let { title, first, last } = data.results[0].name;
+          let randomUserName = `${title} ${first} ${last}`;
+          let card = document.querySelector(".card");
+          let imageEle = document.createElement("img");
+          let para = document.querySelector(".name");
+
+          imageEle.setAttribute("src", randomUserImg);
+          para.innerHTML = randomUserName;
+          card.appendChild(imageEle);
+        }
+      };
+      httpReq.send();
+    </script>
+  </body>
+</html>
+
+<!-- console.log(data.followers); 
+// try { 
+// let data = JSON.parse(responseText);
+// } catch (error) { 
+// console.error("Failed to parse JSON:", error); 
+// }
+ -->
