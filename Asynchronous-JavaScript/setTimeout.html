@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <h1>Chai Aur Code</h1>
+    <button id="stop">Stop</button>
+    <script>
+      const myFunction = function () {
+        console.log("Hello JavaScript");
+      };
+
+      const changeText = function () {
+        document.querySelector("h1").innerHTML = "Coffee Aur Code";
+      };
+      //we have to take reference from it or else if we call the function it doesn't wait for 2sec
+      //directly executes it
+      const stop = setTimeout(changeText, 3000); //myFunction Reference will execute after 2 sec
+
+      //if we want to stop the loop of setTimeout() we have to use clearTimeout() to stop it from the event loop
+      document.querySelector("#stop").addEventListener("click", function () {
+        clearTimeout(stop);
+        console.log("STOPPED");
+      });
+    </script>
+  </body>
+</html>
