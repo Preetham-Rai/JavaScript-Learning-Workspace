@@ -1,10 +1,15 @@
-const obj = {
-  name: "Preetham",
-  price: 199,
-};
+//check the word is palindrome or not
 
-function execute(object) {
-  console.log(`${object.name} welcome to JavaScript`);
+function isPalindrome(word) {
+  function reversedWord(word) {
+    return word.split("").reverse().join("");
+  }
+
+  if (word === reversedWord(word)) {
+    console.log(`The given word ${word} is Palindrome`);
+  } else {
+    console.log(`The given word ${word} is Not Palindrome`);
+  }
 }
-obj.name = "Sandeep";
-execute(obj);
+
+isPalindrome("heeh");
